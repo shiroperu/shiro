@@ -183,7 +183,10 @@
               <section class="section-md">
                 <h5>お問い合わせ</h5>
                 <!-- RD Mailform-->
-                <form class="rd-mailform rd-mailform_style-1 text-left" data-form-output="form-output-global" data-form-type="contact" name="contact" method="post" data-netlify="true">
+                <form class="rd-mailform rd-mailform_style-1 text-left" data-form-output="form-output-global" data-form-type="contact" name="contact" method="post" netlify-honeypot="bot-field" data-netlify="true" data-netlify-recaptcha="true">
+                  <div class="hidden">
+                    <label>ハニーポットフィールド: <input name="bot-field" /></label>
+                  </div>
                   <div class="form-wrap form-wrap_icon linear-icon-man">
                     <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
                     <label class="form-label" for="contact-name">名前</label>
@@ -200,6 +203,7 @@
                     <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
                     <label class="form-label" for="contact-message">問い合わせ内容</label>
                   </div>
+                  <div data-netlify-recaptcha="true"></div>
                   <button class="button button-primary" type="submit">送信</button>
                 </form>
               </section>
